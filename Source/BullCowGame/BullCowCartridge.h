@@ -2,20 +2,22 @@
 
 #pragma once
 
-#include "CoreMinimal.h"
 #include "Console/Cartridge.h"
+#include "CoreMinimal.h"
+// Generated
 #include "BullCowCartridge.generated.h"
 
-UCLASS(ClassGroup=(Custom), meta=(BlueprintSpawnableComponent))
-class BULLCOWGAME_API UBullCowCartridge : public UCartridge
-{
-	GENERATED_BODY()
+UCLASS(ClassGroup = (Custom), meta = (BlueprintSpawnableComponent))
+class BULLCOWGAME_API UBullCowCartridge : public UCartridge {
+  GENERATED_BODY()
 
-	public:
-	virtual void BeginPlay() override;
-	virtual void OnInput(const FString& Input) override;
+ public:
+  virtual void BeginPlay() override;
+  virtual void OnInput(const FString& Input) override;
+  void InitGame();
 
-	// Your declarations go below!
-	private:
-	
+  // Your declarations go below!
+ private:
+  FString HiddenWord;
+  int32 Lives;
 };
